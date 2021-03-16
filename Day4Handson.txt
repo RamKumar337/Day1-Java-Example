@@ -1,0 +1,623 @@
+class Eggs {    
+
+    int doX(Long x, Long y) { return 1;}
+
+    int doX(long... x) { return 2;}
+
+    int doX(Integer x, Integer y) { return 3; }
+
+    int doX(Number n, Number m) { return 4; }
+
+    
+
+    public static void main(String[ ] args) {
+
+        new Eggs().go();
+
+    }
+
+ 
+
+    void go() {
+
+        short s = 7;
+
+        System.out.println(doX(s,s) + " ");
+
+        System.out.println(doX(7,7));
+
+    }
+
+}
+
+ 
+Answer:
+
+G.4  3 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Mixer {    
+
+    Mixer() { }
+
+    Mixer(Mixer m) { m1 = m; }
+
+    Mixer m1;
+
+    public static void main(String[ ] args) {
+
+        Mixer m2 = new Mixer();
+
+        Mixer m3 = new Mixer(m2);
+
+        m3.go();
+
+        Mixer m4 = m3.m1;
+
+        m4.go();
+
+        Mixer m5 = m2.m1;
+
+        m5.go();
+
+    }
+
+    void go() {
+
+        System.out.println("hi ");
+
+    }
+
+}
+
+ 
+Answer:-
+E.hi, followed by an exception 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Alien {
+
+    String invade(short ships) {
+
+        return " a few";
+
+    }
+
+}
+
+ 
+
+class Defender {    
+
+    public static void main(String[] args) {
+
+        System.out.println(new Alien().invade(7));
+
+    }
+
+}
+
+ 
+
+C.Compilation fails 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Fizz {
+
+    int x = 5;
+
+    public static void main(String[] args) {
+
+        final Fizz f1 = new Fizz();
+
+        Fizz f2 = new Fizz();
+
+        Fizz f3 = FizzSwitch(f1, f2);
+
+        System.out.println((f1 == f3) + " " + (f1.x == f3.x));
+
+    }
+
+    static Fizz FizzSwitch(Fizz x, Fizz y) {
+
+        final Fizz z = x;
+
+        z.x = 6;
+
+        return z;
+
+    }
+
+}
+
+ 
+A.true true 
+ 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Knowing {    
+
+    static final long tooth = 343L;
+
+    static long doIt(long tooth) {
+
+        System.out.print(++tooth + " ");
+
+        return ++tooth;
+
+    }    
+
+    public static void main(String[] args) {
+
+        System.out.print(tooth + " ");
+
+        final long tooth = 340L;
+
+        new Knowing().doIt(tooth);
+
+        System.out.println(tooth);
+
+    }
+
+}
+
+ 
+
+D.343  341  340 
+ 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Bird {    
+
+    { System.out.print("b1 "); }
+
+    
+
+    public Bird() {
+
+        System.out.print("b2 ");
+
+    }
+
+}
+
+ 
+class Raptor extends Bird {
+
+    static { System.out.print("r1 "); }
+
+    
+
+    public Raptor() {
+
+        System.out.print("r2 ");
+
+    }
+
+    
+
+    { System.out.print("r3 "); }
+
+    
+
+    static { System.out.print("r4 "); }
+
+}
+
+ 
+
+class Hawk extends Raptor {
+
+    public static void main(String[] args) {
+
+        System.out.print("pre ");
+
+        new Hawk();
+
+        System.out.println("hawk ");
+
+    }
+
+}
+
+ 
+
+D.r1 r4 pre b1 b2 r3 r2 hawk 
+
+
+ 
+
+ 
+
+ 
+
+Problem Statement:
+
+Which is true? (Choose all that apply.)
+
+C.“X extends Y” is correct if X and Y are either both classes or both interfaces. 
+ 
+
+ 
+
+Problem Statement:
+
+What is the output of the following program?
+
+
+class Top {
+
+    public Top(String s) { 
+
+        System.out.println("B");
+
+    }
+
+    
+
+    public class Bottom2 extends Top {
+
+        public Bootom2(String s) {
+
+            System.out.println("D");
+
+        }
+
+        public static void main(String[] args) {
+
+            new Bottom2("C");
+
+            System.out.println(" ");
+
+        }
+
+    }
+
+}
+
+ 
+
+E.Compilation fails. 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Clidders {
+
+    public final void flipper() {
+
+        System.out.println("Clidder");
+
+    }
+
+}
+
+ 
+
+public class Clidlets  extends Clidders {
+
+    public void flipper() {
+
+        System.out.println("Flip a Clidlet");
+
+        super.flipper();
+
+    }    
+
+    public static void main(String[] args) {
+
+        new Clidlets().flipper();
+
+    }    
+
+}
+
+ 
+A.Flip a Clidlet 
+ 
+
+Problem Statement:
+
+Given, the following program:
+
+1. class Programmer {
+
+2.     Programmer debug() { return this; }    
+
+3. }
+
+4. class SCJP extends Programmer {
+
+5.     // insert code here
+
+6.}
+
+ 
+
+Which method at line 5, will compile? (Choose all that apply.)
+A.Programmer debug() { return this; } 
+B.SCJP debug()  { return this; } 
+E.int debug(int x) { return 1; }
+F. Object debug(int x){return this;} 
+
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+class Clidder {
+
+    private final void flipper() {
+
+        System.out.println("Clidder");
+
+    }
+
+}
+
+ 
+
+public class Clidlet  extends Clidder {
+
+    public final void flipper() {
+
+        System.out.println("Clidlet");
+
+    }
+
+    public static void main(String[] args) {
+
+        new Clidlet().flipper();
+
+    }    
+
+}
+
+ 
+A.Clidlet 
+
+
+Problem Statement:
+
+Given the following:
+
+  i.     interface Base {
+
+ii.         boolean m1 ();
+
+iii.         byte m2(short s);
+
+iv.     }
+
+ 
+
+Which code fragments will compile? (Choose all that apply.)
+
+ 
+
+a)  interface Base2 implements Base { }
+
+d)  abstract class Class2 implements Base { }
+
+e)  abstract class Class2 implements Base {
+
+g)  class Class2 implements Base {
+
+
+ 
+
+Problem Statement:
+
+Which of the following declare a compatible abstract class? (Choose all that apply.)
+
+ 
+
+
+b)  public abstract class Canine { public Bark speak() { } }
+
+d)  public class Canine abstract { public abstract Bark speak(); }
+
+ 
+
+ 
+
+ 
+
+Problem Statement:
+
+Given:
+
+public abstract interface Frobnicate { public void twiddle(String s); }
+
+ 
+
+Which is a correct class?
+
+
+b)  public abstract class Frob implements Frobnicate { }
+
+
+
+ 
+
+ 
+
+Problem Statement:
+
+Which statement()s) are true? ()Choose all that apply.)
+ 
+D.HAS-A relationships always rely on polymorphism.  
+
+ 
+
+Problem Statement:
+
+Given:
+
+1. class Plant {
+
+2.     String getName() ) { return “plant”; }
+
+3.     Plant getType() ) { return this; }
+
+4. }
+
+5. class Flower extends Plant {
+
+6.     // insert code here
+
+7. }
+
+8. class Tulip extends Flower { }
+
+ 
+
+Which statement()s), inserted at line 6, will compile? ()Choose all that apply.)
+A.Flower getType() ) { return this; } 
+C.Plant getType() ) { return this; } 
+D.Tulip getType() ) { return new Tulip() ); } 
+
+ 
+
+Problem Statement:
+
+Given:
+
+1.      class Zing {
+
+2.      protected Hmpf h;
+
+3. }
+
+4. class Woop extends Zing {  }
+
+5. class Hmpf { }
+
+ 
+
+Which is true?
+
+
+D.    Woop HAS-A Hmpf and Woop IS-A Zing.
+
+
+
+ 
+
+ 
+
+Problem Statement:
+
+Given:
+
+            public class MyOuter {
+
+         public static class MyInner { 
+
+                    public static void foo() ) { } 
+
+                }
+
+           }
+
+Which, if placed in a class other than MyOuter or MyInner, instantiates an instance of the nested class?
+A.MyOuter.MyInner m = new MyOuter.MyInner() ); 
+D.MyInner mi = new MyOuter.MyInner() ); 
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+public abstract class AbstractTest {
+
+    
+
+    public int getNum()) {
+
+        return 45;
+
+    }
+
+    public abstract class Bar {
+
+        public int getNum()) {
+
+            return 38;
+
+        }
+
+    }
+
+    public static void main()String[] args) {
+
+        AbstractTest t = new AbstractTest()) {
+
+            public int getNum()) {
+
+                return 22;
+
+            }
+
+        };
+
+        AbstractTest.Bar f = t.new Bar()) {
+
+            public int getNum()) {
+
+                return 57;
+
+            }
+
+        };
+
+        System.out.println()f.getNum()) + " " + t.getNum()));
+
+    }
+
+}
+
+ 
+A.57  22 
+ 

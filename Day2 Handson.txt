@@ -1,0 +1,373 @@
+Handson exercise 
+
+Problem Statement:
+
+Find out whether the following file will compile. If it does not compile, how you would fix it?
+
+ 
+
+ public static void main(String[ ] args) {
+
+      int x = 5;
+
+      while (x > 1) { 
+
+          x = x + 1;
+
+          if (x < 3) if here we change lessthan operator loop will execute until condition become fales.
+{
+
+               System.out.println(“small x”);
+
+          }
+
+      }
+
+ }
+
+OutPut:
+
+Program will compile without any compilation error. Normel   
+While loop execute only once. Because if condition false.
+( if we change lessthan(<) operator to greaterthan(>)operator loop wil execute until given condition false.
+
+(or)
+
+we need to change x value lessthan 3. then loop wil execute particular num of times
+
+
+
+
+ 
+
+Problem Statement:
+
+Find out whether the following file will compile. If it does not compile, how you would fix it?
+
+ 
+
+                                                          class Digit {
+
+      public static void main(String[ ] args) {
+
+                                   int x = 1;
+
+                                   while (x < 10) { 
+
+                              if (x > 3) {
+
+                                   System.out.println(“big x”);
+
+                             }
+
+                        }
+
+                 }
+
+            }
+
+OutPut:
+This program dont have any error. it execute code sucessfully.
+this loop print 7 times "big x"
+
+
+Problem Statement:
+
+Find out whether the following file will compile. If it does not compile, how you would fix it?
+
+ 
+
+                                                          class Loop {
+
+                  int x = 5;
+
+                             while (x  > 1) { 
+
+                                   x = x - 1;
+
+                        if (x < 3) {
+
+                              System.out.println(“small x”);
+
+                        }
+
+                   }
+
+             }
+
+ Output:
+
+This code execute succesully without any error.
+
+this loop print 2 times small x 
+
+ 
+
+Problem Statement:
+
+Write a program that produces the following output: 
+
+ 
+
+Hello World!
+
+It's been nice knowing you.
+
+Goodbye world!
+
+OutPut:
+package Handsone;
+
+public class example3 {
+
+	public static void main(String[] args) {
+		System.out.println("Hello orld");
+		System.out.println("It's been nice knowing you.");
+		System.out.println("Good Bye Hello World");
+
+   }
+
+	
+
+ 
+
+Problem Statement:
+
+Write a program that draws the following figures one above the other. 
+
+ 
+
+* * * * *             *  
+
+* * * * *            * *  
+
+* * * * *           * * *
+
+* * * * *         * * * * *
+
+
+public class example4 {
+
+	public static void printstar(int r)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=r-i;j>1;j--) {
+				System.out.print(" ");
+			}
+			for(int j=0;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+
+	}
+
+		public static void main (String[] args)    {
+		int r=5;
+		printstar(r);
+	}
+
+        }
+
+public static void printstar(int r)
+	{
+		for(int i=0;i<r;i++)
+		{
+			
+			for(int j=1;j<=r;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+
+	}
+
+		public static void main (String[] args)    {
+		int r=5;
+		printstar(r);
+	}
+
+        }
+ 
+
+Now modify it to draw them next to each other like earlier.
+
+ 
+
+Problem Statement:
+
+Write a program that prints all the integers between zero and 36.
+
+
+Output:
+
+package Handsone;
+
+public class example4 {
+
+	public static void main(String[] args) {
+		int i;
+		for(i=0;i<=36;i++)
+			System.out.println(i);
+	}
+}
+
+Problem Statement:
+
+What does the following program print? 
+
+ 
+
+// This is the Hello Rank program in Java
+
+class HelloRank {
+
+      public static void main (String args[ ]) {      
+
+                    String name = "Rank";
+
+                    /* Now let's say hello */
+
+                   System.out.println("Hello + name");
+
+                    }
+
+} 
+OutPut:
+It prints Hello + name
+
+Because we given into the doube quatation so it will print that message only.
+
+
+Problem Statement:
+
+What is wrong with this program? 
+
+ 
+
+// This is the Hello program in Java
+
+class Hello {
+
+      public static void main (String args[ ]) {    
+
+                    int i;    
+
+                    System.out.print("Hello ");       // Say Hello
+
+               i = 0;                               // Initialize loop counter
+
+                       while (i <= args.length) {    // Test and Loop
+
+                    System.out.print(args[i] + " ");  
+
+                     i = i + 1;                     // Increment Loop Counter
+
+                     }
+
+                        System.out.println();             // Finish the line
+
+         }
+ 
+}
+
+Output:
+
+we need to remove = operator in while conditon. then it will work without any error. otherwise it throw arrayindexoutofBound exception.
+
+
+Problem Statement:
+
+What is the output of the following program?
+
+ 
+
+import java.util.*;
+ public class Area {
+       public static void main(String[ ] args){
+           double a;
+     double r;
+     final double pi = Math.PI;
+
+     r = 1.0;
+     a = pi * r * r;
+     display(r,a);
+
+     r = 1.5;
+     a = pi * r * r;
+     display(r,a);
+
+     r = 2.0;
+      a = pi * r * r;
+     display(r,a);
+       }//end main
+       //-------------------------------------------//
+       static void display(double r, double a){
+            System.out.println("For radius = " + r +
+                                 ", area = " + a);
+       }//end print
+ }//end Area class
+
+output:
+For radius = 1.0, area = 3.141592653589793
+For radius = 1.5, area = 7.0685834705770345
+For radius = 2.0, area = 12.566370614359172
+
+
+Problem Statement:
+
+There are exactly 2.54 centimeters to an inch. Write a program that takes a number of inches from the command line and converts it to centimeters.
+
+public class example4 {
+
+	public static void main(String[] args) {
+		
+		int inch=10;
+		double cm;
+		cm=inch*2.54;
+		System.out.println("the inch value is :"+cm);
+	}
+
+
+Problem Statement:
+
+Write a program that reads two numbers from the command line, the number of hours worked by an employee and their base pay rate. Then output the total pay due
+
+public class example4 {
+
+	public static void main(String[] args) {
+		System.out.println("Employee worked hours:"+args[0]);
+		System.out.println("Employee per hour pay:"+args[1]);
+		int h=Integer.parseInt(args[0]);
+		int p=Integer.parseInt(args[1]);
+		System.out.println("Total Pay Due: "+ (p*h));
+	}
+
+        }
+
+Problem Statement:
+
+What is the output of the following program?
+
+class Hexy {
+
+    
+
+     public static void main (String[] args)    {
+
+         Integer i = 42;
+
+         String s = (i<40)?"life"sadi>50)?"universe":"everything";
+
+         System.out.println(s);
+
+     }
+
+}
+
+ 
+E.Compilation fails 
+   
